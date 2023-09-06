@@ -1,4 +1,4 @@
-import { Editor } from "slate";
+import { Editor, Text, Transforms } from "slate";
 import { useSlate } from "slate-react";
 import styles from "./Toolbar.module.css";
 import { CustomText } from "@/types";
@@ -59,6 +59,23 @@ function toggleMark(editor: Editor, format: keyof CustomText) {
 function isMarkActive(editor: Editor, format: keyof CustomText) {
   const marks = Editor.marks(editor);
   return marks ? marks?.[format] === true : false;
+}
+
+function isFormatActive(editor: Editor, format: string) {
+  const [match] = Editor.nodes(editor, {
+    match: (n) => Text.isText(n) && !n[format],
+    mode: 'all',
+  });
+  return !match;
+}
+
+function toggleFormat(editor: Editor, format: string) {
+  const isActive = isFormatActive(editor, format);
+  Transforms.setNodes(
+    editor,
+    { [format]: isActive ? null : true },
+    { match: Text.isText, split: true }
+  );
 }
 
 function BoldIcon() {

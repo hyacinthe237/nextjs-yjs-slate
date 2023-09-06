@@ -24,8 +24,7 @@ export function Room({ children }: { children: ReactNode }) {
 }
 
 /**
- * This function is used when deploying an example on liveblocks.io.
- * You can ignore it completely if you run the example locally.
+ * use Override Room Id
  */
 function useOverrideRoomId(roomId: string) {
   const params = useSearchParams();
