@@ -6,7 +6,7 @@ type Props = PropsWithChildren<{
   leaf: CustomText;
 }>;
 
-// Create inline Leaf components for Slate
+// Créer des composants de feuilles en ligne pour Slate
 export function Leaf({ attributes, children, leaf }: Props) {
   if (leaf.bold) {
     children = <strong>{children}</strong>;
