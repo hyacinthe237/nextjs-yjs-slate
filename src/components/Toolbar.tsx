@@ -60,23 +60,6 @@ function isMarkActive(editor: Editor, format: keyof CustomText) {
   return marks ? marks?.[format] === true : false;
 }
 
-function isFormatActive(editor: Editor, format: string) {
-  const [match] = Editor.nodes(editor, {
-    match: (n) => Text.isText(n) && !n[format],
-    mode: 'all',
-  });
-  return !match;
-}
-
-function toggleFormat(editor: Editor, format: string) {
-  const isActive = isFormatActive(editor, format);
-  Transforms.setNodes(
-    editor,
-    { [format]: isActive ? null : true },
-    { match: Text.isText, split: true }
-  );
-}
-
 function BoldIcon() {
   return (
     <svg
