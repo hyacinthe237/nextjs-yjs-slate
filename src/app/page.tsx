@@ -8,8 +8,8 @@ import CollaborativeEditor from "@/components/Editor";
 export default function Page() {
   return (
     <main>
-      <div className={styles.container}>
-        <div className={styles.editorContainer}>
+      <div className='container px-5 py-5 flex flex-col'>
+        <div className='min-h-screen w-full bg-white rounded-md'>
           <Room>
             <CollaborativeEditor />
           </Room>

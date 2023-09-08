@@ -35,3 +35,18 @@ export async function GET() {
    
     return NextResponse.json({ data });
  }
+
+ // delete storage
+ export async function DELETE() {
+    const res = await fetch(`${ROOT_URL}${ROOM_ID}/storage`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + API_KEY
+        },
+    })
+
+    const data = await res.json()
+
+    return NextResponse.json({ data })
+    
+ }

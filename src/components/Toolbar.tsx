@@ -1,6 +1,5 @@
 import { Editor, Text, Transforms } from "slate";
 import { useSlate } from "slate-react";
-import styles from "./Toolbar.module.css";
 import { CustomText } from "@/types";
 
 // A toolbar with simple rich-text controls
@@ -8,9 +7,9 @@ export function Toolbar() {
   const editor = useSlate();
 
   return (
-    <div className={styles.toolbar}>
+    <div className='flex p-[1em] gap-[6px]'>
       <button
-        className={styles.button}
+        className='flex justify-center items-center h-[32px] w-[32px] cursor-pointer rounded-md bg-white border-none text-gray-700 shadow-md'
         data-active={isMarkActive(editor, "bold") || undefined}
         onClick={(event) => {
           event.preventDefault();
@@ -21,7 +20,7 @@ export function Toolbar() {
         <BoldIcon />
       </button>
       <button
-        className={styles.button}
+        className='flex justify-center items-center h-[32px] w-[32px] cursor-pointer rounded-md bg-white border-none text-gray-700 shadow-md'
         data-active={isMarkActive(editor, "italic") || undefined}
         onClick={(event) => {
           event.preventDefault();
@@ -32,7 +31,7 @@ export function Toolbar() {
         <ItalicIcon />
       </button>
       <button
-        className={styles.button}
+        className='flex justify-center items-center h-[32px] w-[32px] cursor-pointer rounded-md bg-white border-none text-gray-700 shadow-md'
         data-active={isMarkActive(editor, "underline") || undefined}
         onClick={(event) => {
           event.preventDefault();

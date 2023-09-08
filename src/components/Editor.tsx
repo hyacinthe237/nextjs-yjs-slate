@@ -8,7 +8,6 @@ import { withCursors, withYjs, YjsEditor } from "@slate-yjs/core";
 import * as Y from "yjs";
 import { LiveblocksProviderType, useRoom, useSelf } from "@/liveblocks.config";
 import { Loading } from "@/components/Loading";
-import styles from "./Editor.module.css";
 import { Toolbar } from "@/components/Toolbar";
 import { Leaf } from "@/components/Leaf";
 import { Cursors } from "@/components/Cursors";
@@ -98,12 +97,12 @@ function SlateEditor({
   return (
     <Slate editor={editor} initialValue={[emptyNode]}>
       <Cursors>
-        <div className={styles.editorHeader}>
+        <div className='flex justify-between items-center'>
           <Toolbar />
           <Avatars />
         </div>
         <Editable
-          className={styles.editor}
+          className='rounded-[inherit] flex-grow w-full h-full p-[1em]'
           placeholder="Start typing here…"
           renderLeaf={renderLeaf}
         />

@@ -1,5 +1,4 @@
 import { useOthers, useSelf } from "@/liveblocks.config";
-import styles from "./Avatars.module.css";
 import Image from 'next/image';
 
 // Create live avatars using Liveblocks presence
@@ -10,7 +9,7 @@ export function Avatars() {
   const currentUser = useSelf();
 
   return (
-    <div className={styles.avatars}>
+    <div className='flex flex-row justify-around p-4'>
       {users.map(({ connectionId, info }) => {
         return (
           <Avatar key={connectionId} picture={info.picture} name={info.name} />
@@ -31,10 +30,10 @@ export function Avatars() {
 
 export function Avatar({ picture, name }: { picture: string; name: string }) {
   return (
-    <div className={styles.avatar} data-tooltip={name}>
+    <div className='rounded-full' data-tooltip={name}>
       <Image
         src={picture}
-        className={styles.avatar_picture}
+        className='rounded-full'
         data-tooltip={name}
         alt={name}
         width={50}
