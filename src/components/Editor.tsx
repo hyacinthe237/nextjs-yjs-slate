@@ -102,7 +102,7 @@ function SlateEditor({
           <Avatars />
         </div>
         <Editable
-          className='rounded-[inherit] flex-grow w-full h-full p-[1em]'
+          className='rounded-[inherit] flex-grow w-full h-full p-[1em] focus:border-white focus-visible:border-white'
           placeholder="Start typing here…"
           renderLeaf={renderLeaf}
         />

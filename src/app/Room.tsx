@@ -17,7 +17,6 @@ export function Room({ children }: { children: ReactNode }) {
         cursor: null,
       }}
     >
-      <Buttons />
       <ClientSideSuspense fallback={<Loading />}>
         {() => children}
       </ClientSideSuspense>
