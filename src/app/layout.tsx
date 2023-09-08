@@ -1,7 +1,7 @@
 import "@/globals.css";
 
 export const metadata = {
-  title: "Liveblocks",
+  title: "Collaborative Editor",
 };
 
 export default function RootLayout({
