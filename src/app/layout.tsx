@@ -25,7 +25,7 @@ export default function RootLayout({
           type="image/png"
         />
       </head>
-      <body>{children}</body>
+      <body className='p-0 m-0 font-mono bg-gray-300'>{children}</body>
     </html>
   );
 }
